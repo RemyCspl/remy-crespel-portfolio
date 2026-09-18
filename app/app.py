@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from data.experiences import experiences
+from data.formations import formations
+
 
 app = Flask(__name__)
 
@@ -10,6 +12,10 @@ def hello_world():
 @app.route("/experiences")
 def experiences_page():
     return render_template("experiences.html", experiences=experiences)
+
+@app.route("/formations")
+def formations_page():
+    return render_template("formations.html", formations=formations)
 
 @app.route("/projects")
 def projects():

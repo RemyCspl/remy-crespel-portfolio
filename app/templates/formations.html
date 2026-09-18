@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+Formations
+{% endblock %}
+
+{% block content %}
+
+<h1>Mes formations</h1>
+
+{% for formation in formations %}
+    <div class="formation">
+        <h3>{{ formation.titre }} {{ formation.date }}</h3>
+
+        <p>{{ formation.etablissement }}, {{ formation.lieu }}</p>
+        
+        <div>
+            {% for description in formation.description %}
+                &nbsp; <span>- {{ description }}</span><br>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
