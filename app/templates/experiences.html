@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}
-Expériences
-{% endblock %}
+{% block title %}Expériences{% endblock %}
 
 {% block content %}
 
@@ -10,27 +8,27 @@ Expériences
 
 {% for experience in experiences %}
     <div class="experience">
-        <h3>{{ experience.poste }} {{ experience.date }} ({{ experience.duree }})</h3>
+        <h3>{{ experience.poste }} — {{ experience.date }} ({{ experience.duree }})</h3>
 
         <p>{{ experience.entreprise.nom }}, {{ experience.entreprise.lieu }}</p>
-        
+
         <div>
             {% for description in experience.description %}
-                <p>&nbsp;- {{ description }}</p>
+                <p>— {{ description }}</p>
             {% endfor %}
         </div>
 
         <div>
-            <p>Technologies: </p>
+            <p>Technologies :</p>
             {% for technologie in experience.technologies %}
-                <p>&nbsp;- {{ technologie }}</p>
+                <p>— {{ technologie }}</p>
             {% endfor %}
         </div>
-        
+
         <div>
-            <p>Compétences: </p>
+            <p>Compétences :</p>
             {% for competence in experience.competences %}
-                <p>&nbsp;- {{ competence }}</p>
+                <p>— {{ competence }}</p>
             {% endfor %}
         </div>
     </div>

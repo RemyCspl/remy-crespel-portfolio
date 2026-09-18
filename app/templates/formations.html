@@ -1,9 +1,6 @@
-
 {% extends "base.html" %}
 
-{% block title %}
-Formations
-{% endblock %}
+{% block title %}Formations{% endblock %}
 
 {% block content %}
 
@@ -11,13 +8,13 @@ Formations
 
 {% for formation in formations %}
     <div class="formation">
-        <h3>{{ formation.titre }} {{ formation.date }}</h3>
+        <h3>{{ formation.titre }} — {{ formation.date }}</h3>
 
         <p>{{ formation.etablissement }}, {{ formation.lieu }}</p>
-        
+
         <div>
             {% for description in formation.description %}
-                <p>&nbsp;- {{ description }}</p>
+                <p>— {{ description }}</p>
             {% endfor %}
         </div>
     </div>

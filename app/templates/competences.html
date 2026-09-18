@@ -1,9 +1,6 @@
-
 {% extends "base.html" %}
 
-{% block title %}
-Compétences
-{% endblock %}
+{% block title %}Compétences{% endblock %}
 
 {% block content %}
 
@@ -11,14 +8,18 @@ Compétences
 
 {% for competence in competences %}
     <div class="competence">
-        <h3>{{ competence.categorie }} </h3>
-        
+        <h3>{{ competence.categorie }}</h3>
+
         <div>
             {% for type, details in competence.detail.items() %}
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {{ type }}:</p>
-                {% for detail in details %}
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {{ detail }}</p>
-                {% endfor %}  
+                <div class="skill-group">
+                    <span class="skill-label">{{ type }}</span>
+                    <div class="skill-tags">
+                        {% for detail in details %}
+                            <span class="skill-tag">{{ detail }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
