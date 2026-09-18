@@ -8,14 +8,34 @@ Expériences
 
 <h1>Mes expériences</h1>
 
-<div class="experience">
-    <h2>IDKIDS</h2>
-    <p>Développement ASP.NET et système de notifications.</p>
-</div>
+{% for experience in experiences %}
+    <div class="experience">
+        <h3>{{ experience.poste }} {{ experience.date }} ({{ experience.duree }})</h3>
 
-<div class="experience">
-    <h2>Les Vrais</h2>
-    <p>Refonte du site et outil de facturation.</p>
-</div>
+        <p>{{ experience.entreprise.nom }}, {{ experience.entreprise.lieu }}</p>
+        
+        <div>
+            {% for description in experience.description %}
+                <span>- {{ description }}</span><br>
+            {% endfor %}
+        </div>
+
+        {% if experience.technologies %}
+            <div>
+                <p>Technologies: </p>
+                {% for technologie in experience.technologies %}
+                    &nbsp; <span>- {{ technologie }}</span><br>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <div>
+            <p>Compétences: </p>
+            {% for competence in experience.competences %}
+                &nbsp; <span>- {{ competence }}</span><br>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
 
 {% endblock %}
