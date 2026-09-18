@@ -13,7 +13,7 @@ formations = [
             ]
     },
     {
-        "titre": "Diplôme ingénieur généraliste, spécilisation Développement Web et Jeux Vidéo",
+        "titre": "Diplôme ingénieur généraliste, spécialisation Développement Web et Jeux Vidéo",
         "etablissement": "JUNIA ISEN",
         "lieu": "Lille",
         "date": "Juillet 2018 - Septembre 2024",

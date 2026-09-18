@@ -16,21 +16,21 @@ Expériences
         
         <div>
             {% for description in experience.description %}
-                &nbsp; <span>- {{ description }}</span><br>
+                <p>&nbsp;- {{ description }}</p>
             {% endfor %}
         </div>
 
         <div>
             <p>Technologies: </p>
             {% for technologie in experience.technologies %}
-                &nbsp; <span>- {{ technologie }}</span><br>
+                <p>&nbsp;- {{ technologie }}</p>
             {% endfor %}
         </div>
         
         <div>
             <p>Compétences: </p>
             {% for competence in experience.competences %}
-                &nbsp; <span>- {{ competence }}</span><br>
+                <p>&nbsp;- {{ competence }}</p>
             {% endfor %}
         </div>
     </div>

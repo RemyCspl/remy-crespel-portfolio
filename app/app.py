@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from data.experiences import experiences
 from data.formations import formations
+from data.competences import competences
 
 
 app = Flask(__name__)
@@ -34,6 +35,9 @@ def contact():
 
     return render_template("contact.html")
 
+@app.route("/competences")
+def competences_page():
+    return render_template("competences.html", competences=competences)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
