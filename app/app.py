@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from data.experiences import experiences
 from data.formations import formations
 from data.competences import competences
@@ -39,6 +39,11 @@ def contact():
 @app.route("/competences")
 def competences_page():
     return render_template("competences.html", competences = competences)
+
+@app.route("/telecharger-cv")
+def telecharger_cv():
+    path = 'files/CV_Remy_Crespel_DevOps.pdf'
+    return send_file(path, as_attachment = True, download_name = 'CV_Remy_Crespel_DevOps.pdf')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
