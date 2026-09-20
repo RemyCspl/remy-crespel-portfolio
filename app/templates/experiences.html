@@ -13,17 +13,20 @@
         <p>{{ experience.entreprise.nom }}, {{ experience.entreprise.lieu }}</p>
 
         <div>
+            <p>Description :</p>
             {% for description in experience.description %}
                 <p>— {{ description }}</p>
             {% endfor %}
         </div>
 
+        {% if experience.technologies %}
         <div>
             <p>Technologies :</p>
             {% for technologie in experience.technologies %}
                 <p>— {{ technologie }}</p>
             {% endfor %}
         </div>
+        {% endif %}
 
         <div>
             <p>Compétences :</p>
