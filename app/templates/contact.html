@@ -6,18 +6,32 @@
 
 <h1>Contact</h1>
 
-<form method="POST" action="{{ url_for('contact') }}">
-
-    <input type="text" name="name" class="form-control" placeholder="Nom" required>
-
-    <input type="email" name="email" class="form-control" placeholder="Email" required>
-
-    <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
-
-    <button type="submit" class="btn-console">
-        Envoyer
-    </button>
-
-</form>
+<p>Une opportunité, une question ? Écrivez-moi, je réponds rapidement.</p>
+<br><br>
+<ul class="list-unstyled">
+    <li>
+        <strong>Email :</strong>
+        <a href="mailto:remy.cspl@gmail.com">remy.cspl@gmail.com</a>
+    </li>
+    <br>
+    <li>
+        <strong>LinkedIn :</strong>
+        <a href="https://www.linkedin.com/in/remy-crespel-b1b887258/" target="_blank" rel="noopener">https://www.linkedin.com/in/remy-crespel-b1b887258/</a>
+    </li>
+    <br>
+    <li>
+        <strong>GitHub :</strong>
+        <a href="https://github.com/RemyCspl" target="_blank" rel="noopener">https://github.com/RemyCspl</a>
+    </li>
+    <br>
+    <li>
+        <strong>Téléphone :</strong>
+        <a href="tel:+33782644806">(+33) 07.82.64.48.06</a>
+    </li>
+</ul>
+<br><br>
+<a class="btn-console" href="/telecharger-cv">
+    Télécharger mon CV
+</a>
 
 {% endblock %}
