@@ -1,0 +1,6 @@
+services:
+  website:
+    container_name: local-portfolio-remy-crespel
+    build: .
+    ports:
+      - 5000:5000
