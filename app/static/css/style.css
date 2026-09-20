@@ -27,6 +27,9 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
@@ -107,6 +110,8 @@ nav a:hover::before { color: var(--accent-2); }
 
 /* ---- Contenu principal ---- */
 main {
+  flex: 1;
+  width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
@@ -162,6 +167,9 @@ main {
   margin-top: 0.9rem;
   margin-bottom: 0.4rem;
 }
+
+/* Petit alinéa avant chaque ligne à tiret (formations, expériences, projets) */
+.detail-line { padding-left: 1em; }
 
 /* ---- Compétences : items affichés comme des tags CLI ---- */
 .skill-group { margin-bottom: 0.4rem; }
@@ -247,4 +255,48 @@ footer p {
   nav { gap: 1rem 1.25rem; padding: 1rem; }
   main { padding: 1.75rem 1.1rem 3rem; }
   .hero h1 { font-size: 2rem; }
+}
+
+/* ==========================================================================
+   Page Projets — bloc ajouté à la fin, ne touche à aucune règle ci-dessus.
+   Reproduit à l'identique le look "panel" utilisé par .formation/.experience,
+   sous des sélecteurs .projet propres à cette page.
+   ========================================================================== */
+.projet {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.projet h3 {
+  color: #F2F5FA;
+  font-size: 1.05rem;
+}
+
+.projet p { color: var(--text-muted); font-size: 0.95rem; margin: 0.3rem 0; }
+
+.projet a {
+  color: var(--accent-2);
+}
+.projet a:hover {
+  color: #F5C078;
+}
+
+.projet > div { margin-top: 0.75rem; }
+.projet > div p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+/* Ligne "Description :" / "Technologies :" / "Lien :" comme un label de section */
+.projet > div > p:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-top: 0.9rem;
+  margin-bottom: 0.4rem;
 }

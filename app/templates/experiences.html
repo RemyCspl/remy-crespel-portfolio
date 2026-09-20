@@ -15,7 +15,7 @@
         <div>
             <p>Description :</p>
             {% for description in experience.description %}
-                <p>— {{ description }}</p>
+                <p class="detail-line">— {{ description }}</p>
             {% endfor %}
         </div>
 
@@ -23,7 +23,7 @@
         <div>
             <p>Technologies :</p>
             {% for technologie in experience.technologies %}
-                <p>— {{ technologie }}</p>
+                <p class="detail-line">— {{ technologie }}</p>
             {% endfor %}
         </div>
         {% endif %}
@@ -31,7 +31,7 @@
         <div>
             <p>Compétences :</p>
             {% for competence in experience.competences %}
-                <p>— {{ competence }}</p>
+                <p class="detail-line">— {{ competence }}</p>
             {% endfor %}
         </div>
     </div>

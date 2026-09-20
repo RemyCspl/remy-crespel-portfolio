@@ -6,8 +6,32 @@
 
 <h1>Mes projets</h1>
 
-<div class="empty-state">
-    Aucun projet publié pour le moment — reviens bientôt.
-</div>
+{% for projet in projets %}
+    <div class="projet">
+        <h3>{{ projet.titre }}</h3>
+
+        <div>
+            <p>Description :</p>
+            <p>{{ projet.description.synthese }}</p>
+            {% for detail in projet.description.details %}
+                <p class="detail-line">— {{ detail }}</p>
+            {% endfor %}
+        </div>
+
+        {% if projet.technologies %}
+        <div>
+            <p>Technologies :</p>
+            {% for technologie in projet.technologies %}
+                <p class="detail-line">— {{ technologie }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div>
+            <p>Lien du projet:</p>
+            <p><a href="{{ projet.lien.url }}">{{ projet.titre }} sur {{ projet.lien.type }}</a></p>
+        </div>
+    </div>
+{% endfor %}
 
 {% endblock %}
