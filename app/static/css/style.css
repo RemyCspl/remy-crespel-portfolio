@@ -50,7 +50,7 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
 }
 a:hover { text-decoration: underline; }
