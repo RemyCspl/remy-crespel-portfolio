@@ -1,5 +1,26 @@
 # Portfolio Rémy Crespel
 
+## Table des matières
+
+- [Comment lancer mon application](#comment-lancer-mon-application)
+  - [Prérequis](#prérequis)
+    - [Docker Desktop ou docker Engine](#docker-desktop-ou-docker-engine)
+    - [Git](#git)
+    - [Python si vous voulez lancer l'application localement](#python-si-vous-voulez-lancer-lapplication-localement)
+  - [Si vous souhaitez lancer l'application directement avec Python localement](#si-vous-souhaitez-lancer-lapplication-directement-avec-python-localement)
+    - [Étape 1: Création et lancement de l'environnement virtuel Python](#etape-1-création-et-lancement-de-lenvironnement-virtuel-python)
+    - [Étape 2: Installation des dépendances](#etape-2-installation-des-dépendances)
+    - [Étape 3: Lancement et vérification de l'application](#etape-3-lancement-et-vérification-de-lapplication)
+  - [Si vous souhaitez utiliser le dockerfile](#si-vous-souhaitez-utiliser-le-dockerfile)
+    - [Étape 1: Création de l'image Docker à l'aide du Docker Compose](#etape-1-création-de-limage-docker-à-laide-du-docker-compose)
+    - [Étape 2: Démarrer l'application](#etape-2-démarrer-lapplication)
+    - [Étape 3: Accéder au site internet ainsi lancer](#etape-3-accéder-au-site-internet-ainsi-lancer)
+    - [Étape 4: Arrêter notre projet](#etape-4-arrêter-notre-projet)
+  - [Si vous souhaitez utiliser le Docker Compose](#si-vous-souhaitez-utiliser-le-docker-compose)
+    - [Étape 1: Création du conteneur Docker](#etape-1-création-du-conteneur-docker)
+    - [Étape 2: Accéder au site internet ainsi lancer](#etape-2-accéder-au-site-internet-ainsi-lancer)
+    - [Étape 3: Arrêter le conteneur lancer précédemment](#etape-3-arrêter-le-conteneur-lancer-précédemment)
+
 ## Comment lancer mon application
 
 ## Prérequis
@@ -47,9 +68,9 @@ Dans un terminal:
 git clone https://github.com/RemyCspl/remy-crespel-portfolio
 ```
 
-## Si vous souhaitez lancer l'application directement avec Python localement (Etapes 2 à 4):
+## Si vous souhaitez lancer l'application directement avec Python localement:
 
-## Etape 2: Création et lancement de l'environnement virtuel Python
+### Etape 1: Création et lancement de l'environnement virtuel Python
 * Création de l'environnement virtuel Python
 ```bash
 python3 -m venv .venv
@@ -71,12 +92,12 @@ python3 -m venv .venv
      source .venv/bin/activate
    ```
 
-## Etape 3: Installation des dépendances
+### Etape 2: Installation des dépendances
 ```bash
 pip install -r requirements.txt
 ```
 
-## Etape 4: Lancement et vérification de l'application
+### Etape 3: Lancement et vérification de l'application
 Lancement de l'application
 ```bash
 python3 ./app/app.py
@@ -84,27 +105,27 @@ python3 ./app/app.py
 
 L'application est maintenant lancée sur le port 5000 de votre machine, pour voir le site, accéder au site ainsi lancée sur l'url [http://localhost:5000](http://localhost:5000)
 
-## Si vous souhaitez utiliser le dockerfile (étapes 5 à 8):
+## Si vous souhaitez utiliser le dockerfile:
 
-## Etape 5: Création de l'image Docker à l'aide du Docker Compose
+### Etape 1: Création de l'image Docker à l'aide du Docker Compose
 
 Dans un terminal à la racine du projet:
 ```bash
 docker build -t portfolio-remy-crespel .
 ```
 
-## Etape 6: Démarrer l'application
+### Etape 2: Démarrer l'application
 Dans un terminal à la racine du projet:
 ```bash
 docker run -d -p 5000:5000  local-portfolio-remy-crespel
 ```
 
-## Etape 7: Accéder au site internet ainsi lancer
+### Etape 3: Accéder au site internet ainsi lancer
 Dans votre navigateur internet préféré aller à l'adresse suivante pour voir le site au complet: [http://localhost:5000](http://localhost:5000)
 
 N'hésitez pas à regarder toutes les pages du site pour en apprendre plus sur moi !
 
-## Etape 8: Arrêter notre projet
+### Etape 4: Arrêter notre projet
 
 Pour arrêter complètement notre projet
 ```bash
@@ -113,23 +134,23 @@ docker rm local-portfolio-remy-crespel
 docker rmi portfolio-remy-crespel
 ```
 
-# Si vous souhaitez utiliser le Docker Compose (étapes 9 à 11)
+## Si vous souhaitez utiliser le Docker Compose:
 
-## Etape 9: Création du conteneur Docker
+### Etape 1: Création du conteneur Docker
 Dans votre terminal à la racine du projet lancer la commande suivante:
 ```bash
 docker compose up -d --build
 ```
 
-## Etape 10: Accéder au site internet ainsi lancer
+### Etape 2: Accéder au site internet ainsi lancer
 Dans votre navigateur internet préféré aller à l'adresse suivante pour voir le site au complet: [http://localhost:5000](http://localhost:5000)
 
 N'hésitez pas à regarder toutes les pages du site pour en apprendre plus sur moi !
 
-## Etape 11: Arrêter le conteneur lancer précédemment
+### Etape 3: Arrêter le conteneur lancer précédemment
 Pour arrêter complètement notre projet
 ```bash
 docker compose down
 ```
 
-Si vous voulez relancer le projet, [revenez à l'étape 9](#etape-6-création-du-conteneur-docker)
+Si vous voulez relancer le projet, [revenez à l'étape 1](#etape-1-création-du-conteneur-docker)
