@@ -3,6 +3,7 @@ from data.experiences import experiences
 from data.formations import formations
 from data.competences import competences
 from data.projets import projets
+from database import *
 
 
 app = Flask(__name__)
@@ -10,6 +11,11 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     return render_template("index.html")
+
+@app.route("/test-bdd")
+def test_bdd():
+    values = recuperer_valuers_table_test()
+    return render_template("test_bdd.html", values = values)
 
 @app.route("/experiences")
 def experiences_page():

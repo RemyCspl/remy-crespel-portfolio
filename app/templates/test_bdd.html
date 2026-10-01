@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Test BDD{% endblock %}
+
+{% block content %}
+
+<h1>Test BDD</h1>
+
+{% for value in values %}
+    <p>Bonjour, je m'appelle {{ value[1] }}</p>
+{% endfor %}
+
+{% endblock %}
